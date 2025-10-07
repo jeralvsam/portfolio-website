@@ -3,191 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeral V Sam - Creative Developer</title>
+    <title>Jeral V Sam - Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0A0A0A;
-            color: #A3A3A3; /* Neutral 400 */
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark blue-gray */
+            color: #E5E7EB; /* Light gray text */
         }
-        .text-glow {
-            text-shadow: 0 0 8px rgba(99, 102, 241, 0.6), 0 0 20px rgba(99, 102, 241, 0.4);
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(#374151 1px, transparent 1px);
+            background-size: 20px 20px;
         }
-        .bg-grid {
-            background-image: linear-gradient(to right, #171717 1px, transparent 1px), linear-gradient(to bottom, #171717 1px, transparent 1px);
-            background-size: 30px 30px;
+        .accent-color {
+            color: #38BDF8; /* Sky Blue */
+        }
+        .bg-accent {
+            background-color: #38BDF8;
+        }
+        .border-accent {
+            border-color: #38BDF8;
         }
         .navbar {
             transition: background-color 0.3s ease-in-out;
         }
         .navbar-scrolled {
-            background-color: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #262626;
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
         }
-        .card-border-glow {
-            position: relative;
-            background: #171717; /* Neutral 900 */
-            border: 1px solid #262626; /* Neutral 800 */
-            transition: border-color 0.3s ease, transform 0.3s ease;
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card-border-glow:hover {
-            border-color: #6366F1; /* Indigo 500 */
-            transform: translateY(-5px);
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
         }
-        .btn-primary {
-            background: #6366F1;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .skill-badge {
+            transition: transform 0.2s ease;
         }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
-        }
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .skill-badge:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation --><header id="navbar" class="navbar fixed w-full z-50 top-0">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white">Jeral V Sam</a>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-neutral-400 hover:text-white transition">About</a>
-                <a href="#projects" class="text-neutral-400 hover:text-white transition">Projects</a>
-                <a href="#skills" class="text-neutral-400 hover:text-white transition">Skills</a>
-                <a href="#contact" class="btn-primary text-white px-5 py-2 rounded-md font-semibold">Contact</a>
+    <!-- Header & Navigation -->
+    <header id="navbar" class="navbar fixed w-full z-50 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-end items-center">
+             <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:accent-color transition duration-300">About</a>
+                <a href="#projects" class="text-gray-300 hover:accent-color transition duration-300">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:accent-color transition duration-300">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:accent-color transition duration-300">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-feather="menu"></i>
             </button>
         </div>
-        <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden bg-[#101010]">
-            <a href="#about" class="block py-3 px-6 text-neutral-300 hover:bg-neutral-800">About</a>
-            <a href="#projects" class="block py-3 px-6 text-neutral-300 hover:bg-neutral-800">Projects</a>
-            <a href="#skills" class="block py-3 px-6 text-neutral-300 hover:bg-neutral-800">Skills</a>
-            <a href="#contact" class="block py-3 px-6 text-neutral-300 hover:bg-neutral-800">Contact</a>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-700">About</a>
+            <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-700">Projects</a>
+            <a href="#skills" class="block py-3 px-6 text-gray-300 hover:bg-gray-700">Skills</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-700">Contact</a>
         </div>
     </header>
 
-    <!-- Hero Section --><section class="min-h-screen flex items-center bg-grid relative pt-20">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A]"></div>
-        <div class="container mx-auto px-6 text-center z-10">
-            <h1 class="text-4xl md:text-7xl font-extrabold text-white leading-tight mb-4">
-                Creative Developer & Technologist
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center p-4">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
+                Hi, I'm Jeral V Sam
             </h1>
-            <p class="text-lg md:text-xl text-neutral-400 mb-8 max-w-3xl mx-auto">
-                Transforming complex problems into elegant digital solutions. I build beautiful, functional, and user-centric applications, websites, and games.
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8">
+                A Computer Science student passionate about development.
             </p>
-            <a href="#projects" class="btn-primary text-white font-bold px-8 py-4 rounded-md inline-block">View My Work</a>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/jeralvsam" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                    <i data-feather="github" class="w-8 h-8"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeral-v-sam-212a2b34b/" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                    <i data-feather="linkedin" class="w-8 h-8"></i>
+                </a>
+                <a href="https://x.com/jeralvsam" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                     <svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 h-8 fill-current"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- About Me Section --><section id="about" class="py-24 fade-in-section">
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Image on the left for desktop, centered for mobile --><div class="md:w-1/3 order-first md:order-first"> 
-                    <div class="relative w-72 h-72 mx-auto md:mx-0">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full blur-xl"></div>
-                        <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759846664/jeral_yz6d0w_-_Edited_hjoken.png" alt="Jeral V Sam" class="relative w-full h-full object-cover rounded-full border-4 border-neutral-800">
-                    </div>
+                <div class="md:w-1/3">
+                    <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759846664/jeral_yz6d0w_-_Edited_hjoken.png" alt="Jeral V Sam" class="rounded-full mx-auto shadow-lg border-4 border-gray-700 w-64 h-64 object-cover">
                 </div>
-                <!-- Text on the right for desktop, centered for mobile --><div class="md:w-2/3 text-center md:text-left">
-                     <h2 class="text-3xl font-bold text-white mb-4">Jeral V Sam</h2>
-                     <p class="text-lg text-neutral-300 mb-4">
-                        I'm a second-year BSc Computer Science student passionate about the entire spectrum of digital creation—from app and web development to game design and data science. My focus is on learning by building, and my goal is to create technology that is both impactful and intuitive.
-                     </p>
-                     <p class="text-lg text-neutral-400">
-                        Currently, I'm honing my skills in C, Python, Java, Flutter, and Unity, always seeking to expand my technical toolkit to bring more ambitious ideas to life.
-                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section --><section id="projects" class="py-24 bg-grid fade-in-section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white">Featured Project</h2>
-                <p class="text-neutral-400 mt-2">A look at my latest work.</p>
-            </div>
-            <div class="card-border-glow rounded-xl overflow-hidden md:flex items-center">
-                <div class="md:w-1/2 p-6">
-                     <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759845785/unnamed_3_fx2yun.png" alt="QConnect App" class="w-full rounded-lg shadow-2xl">
-                </div>
-                <div class="p-8 md:p-12 md:w-1/2">
-                    <h3 class="text-3xl font-bold text-white mb-3">QConnect - Emergency App</h3>
-                    <p class="text-neutral-300 mb-6">
-                        An all-in-one emergency application designed to enhance public safety in Kerala. It features rapid crime reporting, instant SOS alerts to contacts, and a comprehensive local helpline directory. This project taught me the power of using technology for social good.
+                <div class="md:w-2/3 text-lg text-gray-300 text-center md:text-left">
+                    <p class="mb-4">
+                        Hello! I'm Jeral, a second-year BSc Computer Science student with a deep interest in app development, web technologies, game design, and data science. I am driven by the challenge of solving real-world problems through technology and creating applications that can make a tangible difference.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="bg-neutral-800 text-indigo-400 text-sm font-medium px-3 py-1 rounded-full">Flutter</span>
-                        <span class="bg-neutral-800 text-indigo-400 text-sm font-medium px-3 py-1 rounded-full">Firebase</span>
-                        <span class="bg-neutral-800 text-indigo-400 text-sm font-medium px-3 py-1 rounded-full">AI Tools</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 font-semibold hover:underline text-lg">Project Details &rarr;</a>
+                    <p class="mb-4">
+                        I'm actively developing my skills in a variety of languages and platforms including C, Python, Java, Flutter, and Unity. My goal is to build a versatile skill set that allows me to bring any creative idea to life, no matter the platform.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section --><section id="skills" class="py-24 fade-in-section">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white">Technical Skillset</h2>
-                <p class="text-neutral-400 mt-2">The languages, frameworks, and tools I use to build things.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="card-border-glow p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Languages</h3>
-                    <p class="text-neutral-400">C, Python, Java, Dart, SQL</p>
-                </div>
-                <div class="card-border-glow p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Frameworks</h3>
-                    <p class="text-neutral-400">Flutter, Unity</p>
-                </div>
-                <div class="card-border-glow p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Backend & DB</h3>
-                    <p class="text-neutral-400">Firebase, Supabase</p>
-                </div>
-                <div class="card-border-glow p-6 rounded-lg text-center">
-                    <h3 class="text-xl font-semibold text-white mb-2">Interests</h3>
-                    <p class="text-neutral-400">Data Science, Git & GitHub</p>
+            <h2 class="text-3xl font-bold text-center text-white mb-12">My Featured Project</h2>
+            <div class="flex justify-center">
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden max-w-lg">
+                    <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759845785/unnamed_3_fx2yun.png" alt="QConnect App" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">QConnect - Emergency App</h3>
+                        <p class="text-gray-400 mb-4">An emergency app with crime reporting, SOS alerts, and a helpline directory for Kerala to make safety accessible for everyone.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">Flutter</span>
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">AI Tools</span>
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-accent hover:underline">View Project &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section --><section id="contact" class="py-24 bg-grid fade-in-section">
-        <div class="container mx-auto px-6 text-center max-w-2xl">
-            <h2 class="text-4xl font-bold text-white">Let's Connect</h2>
-            <p class="text-lg text-neutral-400 my-6">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team. Feel free to reach out.
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">My Skills</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-white mb-4 text-center">Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">C</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Python</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Java</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Dart</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">SQL</span>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold text-white mb-4 text-center">Technologies & Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Flutter</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Unity</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Data Science</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Firebase</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Supabase</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Contact Me</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                I'm currently open to new opportunities and collaborations. The best way to reach me is by email.
             </p>
-            <a href="mailto:jeralvsam@gmail.com" class="btn-primary text-white font-bold px-8 py-4 rounded-md inline-block">
-                jeralvsam@gmail.com
-            </a>
+            <div>
+                <a href="mailto:jeralvsam@gmail.com" class="inline-block bg-accent text-white text-lg font-semibold px-8 py-4 rounded-md hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    jeralvsam@gmail.com
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer --><footer class="border-t border-neutral-900 py-8">
-        <div class="container mx-auto px-6 text-center text-neutral-500">
-            <div class="flex justify-center space-x-6 mb-4">
-                 <a href="https://github.com/jeralvsam" target="_blank" class="hover:text-white transition"><i data-feather="github"></i></a>
-                 <a href="https://www.linkedin.com/in/jeral-v-sam-212a2b34b/" target="_blank" class="hover:text-white transition"><i data-feather="linkedin"></i></a>
-                 <a href="https://x.com/jeralvsam" target="_blank" class="hover:text-white transition"><i data-feather="twitter"></i></a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://github.com/jeralvsam" target="_blank" class="hover:text-white transition duration-300">
+                    <i data-feather="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeral-v-sam-212a2b34b/" target="_blank" class="hover:text-white transition duration-300">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="https://x.com/jeralvsam" target="_blank" class="hover:text-white transition duration-300">
+                     <svg viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6 fill-current"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
+                </a>
             </div>
-            <p>&copy; 2025 Jeral V Sam. All Rights Reserved.</p>
+            <p>&copy; 2025 Jeral V Sam. All rights reserved.</p>
         </div>
     </footer>
 
@@ -211,7 +221,7 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
+
         // Smooth scrolling for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -219,25 +229,13 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                if (!mobileMenu.classList.contains('hidden')) {
+                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
-
-        // Fade-in animation on scroll
-        const sections = document.querySelectorAll('.fade-in-section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => {
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
+
 
