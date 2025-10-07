@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeral V Sam - Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark blue-gray */
+            color: #E5E7EB; /* Light gray text */
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(#374151 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .accent-color {
+            color: #38BDF8; /* Sky Blue */
+        }
+        .bg-accent {
+            background-color: #38BDF8;
+        }
+        .border-accent {
+            border-color: #38BDF8;
+        }
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+        }
+        .navbar-scrolled {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.5em;
+            background-color: #38BDF8;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        }
+        .skill-badge {
+            transition: transform 0.2s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="navbar" class="navbar fixed w-full z-50 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">JVS<span class="accent-color">.</span></a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:accent-color transition duration-300">About</a>
+                <a href="#projects" class="text-gray-300 hover:accent-color transition duration-300">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:accent-color transition duration-300">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:accent-color transition duration-300">Contact</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-accent text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Hire Me</a>
+             <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">About</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Projects</a>
+            <a href="#skills" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Skills</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Contact</a>
+            <div class="px-6 py-4">
+                 <a href="#contact" class="block w-full text-center bg-accent text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                Hi, I'm Jeral V Sam
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                A Computer Science student passionate about <span id="typing-text" class="accent-color font-semibold"></span><span class="typing-cursor"></span>
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://github.com/jeralvsam" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                    <i data-feather="github" class="w-8 h-8"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeral-v-sam-212a2b34b/" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                    <i data-feather="linkedin" class="w-8 h-8"></i>
+                </a>
+                <a href="https://x.com/jeralvsam" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
+                    <i data-feather="twitter" class="w-8 h-8"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759846664/jeral_yz6d0w_-_Edited_hjoken.png" alt="Jeral V Sam" class="rounded-full mx-auto shadow-lg border-4 border-gray-700">
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-300">
+                    <p class="mb-4">
+                        Hello! I'm Jeral, a second-year BSc Computer Science student with a deep interest in app development, web technologies, game design, and data science. I am driven by the challenge of solving real-world problems through technology and creating applications that can make a tangible difference.
+                    </p>
+                    <p class="mb-4">
+                        I'm actively developing my skills in a variety of languages and platforms including C, Python, Java, Flutter, and Unity. My goal is to build a versatile skill set that allows me to bring any creative idea to life, no matter the platform.
+                    </p>
+                    <p>
+                        I believe in learning by doing, and I'm always looking for the next project to dive into. My journey is just beginning, and I'm excited to build more projects that matter.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">My Featured Project</h2>
+            <div id="project-grid" class="flex justify-center">
+                <!-- App Project: QConnect -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden max-w-lg">
+                    <img src="https://res.cloudinary.com/dl0kcbeyv/image/upload/v1759845785/unnamed_3_fx2yun.png" alt="QConnect App" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">QConnect - Emergency App</h3>
+                        <p class="text-gray-400 mb-4">An emergency app with crime reporting, SOS alerts, and a helpline directory for Kerala to make safety accessible for everyone.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">Flutter</span>
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">AI Tools</span>
+                            <span class="bg-gray-700 text-xs text-sky-300 px-2 py-1 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-accent hover:underline">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">My Skills</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-white mb-4">Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">C</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Python</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Java</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Dart</span>
+                        <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">SQL</span>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Technologies & Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Flutter</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Unity</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Data Science</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Firebase</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Supabase</span>
+                         <span class="skill-badge bg-gray-700 text-gray-200 px-4 py-2 rounded-md">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Contact Me</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                I'm currently open to new opportunities and collaborations. The best way to reach me is by email.
+            </p>
+            <div>
+                <a href="mailto:jeralvsam@gmail.com" class="inline-block bg-accent text-white text-lg font-semibold px-8 py-4 rounded-md hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                    jeralvsam@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://github.com/jeralvsam" target="_blank" class="hover:text-white transition duration-300">
+                    <i data-feather="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeral-v-sam-212a2b34b/" target="_blank" class="hover:text-white transition duration-300">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="https://x.com/jeralvsam" target="_blank" class="hover:text-white transition duration-300">
+                    <i data-feather="twitter"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Jeral V Sam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Feather Icons
+        feather.replace();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const phrases = ["App Development.", "Website and Game Development.", "data science."];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let currentPhrase = "";
+        let isDeleting = false;
+
+        function type() {
+            const fullPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                currentPhrase = fullPhrase.substring(0, currentPhrase.length - 1);
+            } else {
+                currentPhrase = fullPhrase.substring(0, currentPhrase.length + 1);
+            }
+
+            typingText.textContent = currentPhrase;
+
+            let typeSpeed = 150;
+            if (isDeleting) {
+                typeSpeed /= 2;
+            }
+
+            if (!isDeleting && currentPhrase === fullPhrase) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentPhrase === "") {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(type, 1000);
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu on click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
