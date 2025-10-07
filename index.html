@@ -91,7 +91,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex justify-center pt-32 md:pt-0 md:items-center relative">
+    <section class="hero-bg min-h-screen flex justify-center items-center relative">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
                 Hi, I'm Jeral V Sam
@@ -107,7 +107,7 @@
                     <i data-feather="linkedin" class="w-8 h-8"></i>
                 </a>
                 <a href="https://x.com/jeralvsam" target="_blank" class="text-gray-300 hover:accent-color transition duration-300">
-                    <i data-feather="twitter" class="w-8 h-8"></i>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 h-8" fill="currentColor"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
                 </a>
             </div>
         </div>
@@ -221,7 +221,7 @@
                     <i data-feather="linkedin"></i>
                 </a>
                 <a href="https://x.com/jeralvsam" target="_blank" class="hover:text-white transition duration-300">
-                    <i data-feather="twitter"></i>
+                     <svg viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6" fill="currentColor"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
                 </a>
             </div>
             <p>&copy; 2025 Jeral V Sam. All rights reserved.</p>
@@ -284,6 +284,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Re-run feather replace after DOM is loaded
+            feather.replace();
             setTimeout(type, 1000);
         });
 
